@@ -1,0 +1,8 @@
+{
+  "/api": {
+
+      "target": "https://edarter2.herokuapp.com/api",
+    "secure": true,
+    "logLevel": "info"
+  }
+}
