@@ -123,13 +123,13 @@ export class RoomTableComponent implements OnInit {
             },
             error => {
               console.error(error);
-              Utils.showNotification('nie udało się odświeżyć danych', 'danger');
+              Utils.showNotification('Nie udało się odświeżyć danych', 'danger');
 
             })
       },
       error1 => {
         console.log(error1);
-        Utils.showNotification('nnie udało się odświeżyć danych', 'danger');
+        Utils.showNotification('Nie udało się odświeżyć danych', 'danger');
 
       })
 
@@ -140,11 +140,11 @@ export class RoomTableComponent implements OnInit {
       res => {
         console.log(res);
         console.log('dodano rekord');
-        Utils.showNotification('dodano rekord', 'success');
+        Utils.showNotification('Dodano rekord', 'success');
       },
       err => {
         console.error(err);
-        Utils.showNotification('nie dodano rekordu', 'danger');
+        Utils.showNotification('Nie dodano rekordu', 'danger');
       }
     )
 
@@ -174,18 +174,18 @@ export class RoomTableComponent implements OnInit {
     if (queue.id) {
       this.http.post(`https://edarter2.herokuapp.com/api/deleteRound?id=${queue.id}`, null).subscribe(
         res => {
-          Utils.showNotification('usunięto rekord', 'success');
+          Utils.showNotification('Usunięto rekord', 'success');
           console.log(res);
-          console.log('usunieto rekord');
+          console.log('Usunieto rekord');
         },
         err => {
-          Utils.showNotification('nie usunięto rekordu', 'danger');
+          Utils.showNotification('Nie usunięto rekordu', 'danger');
           console.error(err);
         }
       )
     }
     else {
-      Utils.showNotification('rekord jeszcze nie istnieje', 'danger');
+      Utils.showNotification('Rekord jeszcze nie istnieje', 'danger');
     }
     setTimeout(() => {
       this.refreshData();
@@ -203,8 +203,9 @@ export class RoomTableComponent implements OnInit {
           this.refreshData();
         },
         error1 => {
+          Utils.showNotification('Wybrany gracz nie istnieje', 'danger');
           console.error(error1);
-        }
+          }
       )
   }
 

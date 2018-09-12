@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
           Utils.showNotification('Utworzono konto', 'success')
       },
       error1 => {
+        Utils.showNotification('Rejestracja nieudana', 'danger');
         console.error(error1);
       }
     )

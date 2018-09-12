@@ -29,6 +29,7 @@ export class AddRoomComponent implements OnInit {
           this.router.navigate(['/game-room', res.id]);
       },
       error1 => {
+        Utils.showNotification('Błąd tworzenia gry', 'danger');
         console.error(error1);
       }
     )

@@ -32,9 +32,10 @@ export class LoginComponent implements OnInit {
     this.http.post('https://edarter2.herokuapp.com/api/login', `username=${this.username}&password=${this.password}`, httpOptions)
       .subscribe((response) => {
         this.UserService.login();
-        Utils.showNotification("zalogowano", 'success');
+        Utils.showNotification("Zalogowano", 'success');
         this.router.navigate(['/add-room']);
       }, (error) => {
+        Utils.showNotification('Logowanie nieudane', 'danger');
         console.log(error);
       });
 
