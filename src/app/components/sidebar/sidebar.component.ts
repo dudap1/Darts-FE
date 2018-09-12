@@ -43,4 +43,5 @@ export class SidebarComponent implements OnInit {
   logout() {
     this.UserService.logout();
   }
+
 }
